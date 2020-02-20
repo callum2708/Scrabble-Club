@@ -1,0 +1,8 @@
+﻿ul > li {
+    display: inline-block;
+}
+
+.form-control {
+    width: 50%;
+    display: inline-block;
+}

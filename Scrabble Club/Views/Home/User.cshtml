@@ -1,0 +1,31 @@
+﻿@model Scrabble_Club.ViewModels.UserViewModel
+
+@{
+    ViewBag.Title = "User";
+}
+
+<div class="row">
+    <div class="col">
+        @Model.user.firstName @Model.user.lastName
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">@Html.DisplayNameFor(m => m.numberOfWins)</div>
+    <div class="col">@Model.numberOfWins</div>
+</div>
+
+<div class="row">
+    <div class="col">@Html.DisplayNameFor(m => m.numberOfLosses)</div>
+    <div class="col">@Model.numberOfLosses</div>
+</div>
+
+<div class="row">
+    <div class="col">@Html.DisplayNameFor(m => m.averageScore)</div>
+    <div class="col">@Model.averageScore</div>
+</div>
+
+<div class="row">
+    <div class="col">@Html.DisplayNameFor(m => m.numberOfWins)</div>
+    <div class="col">@Model.numberOfWins</div>
+</div>

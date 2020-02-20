@@ -1,0 +1,47 @@
+﻿@model Scrabble_Club.Models.User
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<script>
+    $(document).ready(function () {
+        $('#findUser').click(function () {
+            $.ajax({
+                url: "/User/Get",
+                data: { name: $('#userName').val() },
+                success: function (user) {
+                    alert(user["dateJoined"]);
+                },
+                error: function () {
+                    alert('error');
+                }
+            })
+        })
+    })
+
+</script>
+
+<div>
+    <input type="text" class="form-control" style="margin:auto;" id="userName" />
+    <button type="submit" id="findUser">Find User</button>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.DisplayNameFor(m => m.firstName)
+        @Html.TextBoxFor(m => m.firstName, new { @class = "form-control" })
+    </div>
+
+    <div>
+        @Html.DisplayNameFor(m => m.lastName)
+        @Html.TextBoxFor(m => m.lastName, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.DisplayNameFor(m => m.contactNumber)
+        @Html.TextBoxFor(m => m.contactNumber, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Submit</button>
+}
